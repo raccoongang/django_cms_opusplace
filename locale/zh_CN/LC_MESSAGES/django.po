@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-09 12:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: django_cms_opusplace/settings.py:157 django_cms_opusplace/settings.py:173
+msgid "English"
+msgstr ""
+
+#: django_cms_opusplace/settings.py:158 django_cms_opusplace/settings.py:180
+msgid "Chinese"
+msgstr ""
+
+#: django_cms_opusplace/templates/base.html:54
+msgid "Registration page"
+msgstr ""
+
+#: django_cms_opusplace/templates/registration/form.html:14
+msgid "Save"
+msgstr ""
+
+#: registration/models.py:11
+msgid "March"
+msgstr "三月"
+
+#: registration/models.py:12
+msgid "April"
+msgstr "四月"
+
+#: registration/models.py:13
+msgid "May"
+msgstr "五月"
+
+#: registration/models.py:15
+msgid "Surname"
+msgstr "姓"
+
+#: registration/models.py:16
+msgid "First name"
+msgstr "名"
+
+#: registration/models.py:17
+msgid "School"
+msgstr "学校"
+
+#: registration/models.py:18
+msgid "Grade level"
+msgstr "年纪"
+
+#: registration/models.py:19
+msgid "City"
+msgstr "城市"
+
+#: registration/models.py:20
+msgid "Province"
+msgstr "省份"
+
+#: registration/models.py:21
+msgid "Email address"
+msgstr "电子邮箱"
+
+#: registration/models.py:22
+msgid "Preferred course start"
+msgstr "有兴趣何时开课"
+
+#: registration/views.py:14
+msgid "Registration successful."
+msgstr ""

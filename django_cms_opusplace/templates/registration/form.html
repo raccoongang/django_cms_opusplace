@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block nav_registration_page %}selected{% endblock nav_registration_page %}
+
+{% block set_lang_current_page %}
+{% url "registration-page" %}
+{% endblock set_lang_current_page %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans "Save" %}" />
+</form>
+{% endblock content %}

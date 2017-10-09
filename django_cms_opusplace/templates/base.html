@@ -1,0 +1,86 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load i18n %}
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}OpuSplase{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style type="text/css">
+            .nav {
+                padding-left: 0;
+            }
+            .nav li {
+                display: inline;
+                list-style-type: none;
+                padding-right: 20px;
+            }
+            .container {
+                width: 940px;
+                margin: 0 auto
+            }
+            .img-responsive {
+              width: 100%;
+            }
+            .content {
+                float: left;
+                width: 80%;
+            }
+            .sidebar {
+                float: left;
+                width: 20%;
+            }
+        </style>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+
+        {% cms_toolbar %}
+        <div class="container">
+            <div>
+                <ul class="nav">
+                    {% show_menu 0 100 100 100 %}
+                    <li class="child {% block nav_registration_page %}sibling{% endblock nav_registration_page %}">
+                        <a href="{% url "registration-page" %}">{% trans "Registration page" %}</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    {% for language in languages %}
+                    <li class="{% if language.code == LANGUAGE_CODE %}active{% endif %}">
+
+                        {% if request.current_page %}
+                        <a href="{% page_url request.current_page language.code %}">
+                            {{ language.name_local }} ({{ language.code }})
+                        </a>
+                        {% else %}
+
+                        {% language language.code %}
+                        <a href="{% block set_lang_current_page %}{% endblock set_lang_current_page %}">
+                            {{ language.name_local }} ({{ language.code }})
+                        </a>
+                        {% endlanguage %}
+
+                        {% endif %}
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% block content %}{% endblock content %}
+
+        </div>
+        {% render_block "js" %}
+    </body>
+</html>
