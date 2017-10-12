@@ -8,7 +8,7 @@
 {% endblock set_lang_current_page %}
 
 {% block content %}
-  <form action="" method="post">
+  <form class="registration-form" action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="{% trans "Save" %}" />

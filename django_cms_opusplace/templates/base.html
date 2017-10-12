@@ -1,35 +1,12 @@
 {% load cms_tags menu_tags sekizai_tags %}
 {% load i18n %}
+{% load static %}
 <!doctype html>
 <html>
     <head>
         <title>{% block title %}OpuSplase{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .img-responsive {
-              width: 100%;
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
-        </style>
+        <link rel="stylesheet" href="{% static "main.css" %}">
         {% render_block "css" %}
     </head>
     <body>
@@ -46,41 +23,54 @@
         {% get_language_info_list for LANGUAGES as languages %}
 
         {% cms_toolbar %}
-        <div class="container">
-            <div>
-                <ul class="nav">
-                    {% show_menu 0 100 100 100 %}
-                    <li class="child {% block nav_registration_page %}sibling{% endblock nav_registration_page %}">
-                        <a href="{% url "registration-page" %}">{% trans "Registration page" %}</a>
-                    </li>
-                </ul>
+            <header class="header">
+                <a href="/zhongguo/" class="logo">
+                    <img src="{% static "img/logo.png" %}" alt="opusplace">
+                </a>
+                <div class="header-wrapper">
+                    <ul class="nav-list">
+                        {% show_menu 0 100 100 100 %}
+                        <li class="child {% block nav_registration_page %}sibling{% endblock nav_registration_page %}">
+                            <a href="{% url "registration-page" %}">{% trans "Registration page" %}</a>
+                        </li>
+                    </ul>
+                    <div class="lang-box">
+                        <ul class="lang-list">
+                            {% for language in languages %}
+                            <li class="{% if language.code == LANGUAGE_CODE %}active{% endif %}">
 
-                <ul>
-                    {% for language in languages %}
-                    <li class="{% if language.code == LANGUAGE_CODE %}active{% endif %}">
+                                {% if request.current_page %}
+                                <a href="{% page_url request.current_page language.code %}">
+                                    {{ language.name_local }} ({{ language.code }})
+                                </a>
+                                {% else %}
 
-                        {% if request.current_page %}
-                        <a href="{% page_url request.current_page language.code %}">
-                            {{ language.name_local }} ({{ language.code }})
-                        </a>
-                        {% else %}
+                                {% language language.code %}
+                                <a href="{% block set_lang_current_page %}{% endblock set_lang_current_page %}">
+                                    {{ language.name_local }} ({{ language.code }})
+                                </a>
+                                {% endlanguage %}
 
-                        {% language language.code %}
-                        <a href="{% block set_lang_current_page %}{% endblock set_lang_current_page %}">
-                            {{ language.name_local }} ({{ language.code }})
-                        </a>
-                        {% endlanguage %}
+                                {% endif %}
 
-                        {% endif %}
-
-                    </li>
-                    {% endfor %}
-                </ul>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="content-wrapper">
+                {% block content %}{% endblock content %}
             </div>
+            <footer class="footer">
+                <div class="footer-wrapper">
+                    <a class="logo-footer" href="/zhongguo/">
+                        <img src="{% static "img/logo-footer.png" %}" alt="opusplace">
+                    </a>
+                    <p class="copyright">© 2017 Opusplace AB. All rights reserved.</p>
+                </div>
+            </footer>
 
-            {% block content %}{% endblock content %}
-
-        </div>
         {% render_block "js" %}
     </body>
 </html>
