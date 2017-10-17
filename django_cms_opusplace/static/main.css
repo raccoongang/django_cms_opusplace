@@ -47,6 +47,8 @@ a:hover {
 }
 .filer_image {
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 .content-wrapper > p {
     max-width: 1180px;
