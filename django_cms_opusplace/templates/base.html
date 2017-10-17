@@ -11,11 +11,14 @@
     </head>
     <body>
         {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
+        <div class="message-holder">
+            <div class="messages">
+                <span class="close">close</span>
+                {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
         {% endif %}
 
         {% get_current_language as LANGUAGE_CODE %}
