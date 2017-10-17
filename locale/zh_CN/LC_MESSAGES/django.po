@@ -28,7 +28,7 @@ msgstr ""
 
 #: django_cms_opusplace/templates/base.html:38
 msgid "Registration page"
-msgstr ""
+msgstr "注册"
 
 #: django_cms_opusplace/templates/registration/form.html:14
 msgid "Save"
