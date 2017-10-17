@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="{% static "main.css" %}">
         {% render_block "css" %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         {% if messages %}
@@ -15,7 +16,7 @@
             <div class="messages">
                 <span class="close">close</span>
                 {% for message in messages %}
-                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</p>
                 {% endfor %}
             </div>
         </div>
@@ -75,5 +76,12 @@
             </footer>
 
         {% render_block "js" %}
+        <script>
+          $(document).ready(function() {
+            $('.close').on('click', function (ev) {
+              $('.message-holder').remove();
+            })
+          })
+        </script>
     </body>
 </html>

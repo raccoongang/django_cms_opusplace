@@ -10,4 +10,7 @@ class ParticipantCreateView(SuccessMessageMixin, CreateView):
     model = Participant
     fields = '__all__'
     success_url = '/zhongguo/'
-    success_message = _('Registration successful.')
+    success_message = _('''Thanks for your interest!<br />
+We will provide you with more details on the 'Problem solving - to awaken interest' course in early December.
+<p>Wish you all the best,<br />
+Opusplace team</p>''')

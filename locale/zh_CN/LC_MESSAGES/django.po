@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-09 12:34+0000\n"
+"POT-Creation-Date: 2017-10-17 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: django_cms_opusplace/settings.py:157 django_cms_opusplace/settings.py:173
+#: django_cms_opusplace/settings.py:161 django_cms_opusplace/settings.py:177
 msgid "English"
 msgstr ""
 
-#: django_cms_opusplace/settings.py:158 django_cms_opusplace/settings.py:180
+#: django_cms_opusplace/settings.py:162 django_cms_opusplace/settings.py:184
 msgid "Chinese"
 msgstr ""
 
-#: django_cms_opusplace/templates/base.html:54
+#: django_cms_opusplace/templates/base.html:38
 msgid "Registration page"
 msgstr ""
 
@@ -78,6 +78,15 @@ msgstr "电子邮箱"
 msgid "Preferred course start"
 msgstr "有兴趣何时开课"
 
-#: registration/views.py:14
-msgid "Registration successful."
+#: registration/views.py:13
+msgid ""
+"Thanks for your interest!<br />\n"
+"We will provide you with more details on the 'Problem solving - to awaken "
+"interest' course in early December.\n"
+"<p>Wish you all the best,<br />\n"
+"Opusplace team</p>"
 msgstr ""
+"谢谢您的关注！<br />\n"
+"我们将在十二月初向您提供更多关于“Problem solving - to awaken interest” 课程开始的详情。\n"
+"<p>祝安，<br />\n"
+"Opusplace 团队</p>"
