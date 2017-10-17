@@ -8,6 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic import RedirectView
 from django.views.static import serve
 
 from registration.views import ParticipantCreateView
@@ -20,7 +21,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^$', RedirectView.as_view(url='/zhongguo/')),
+    url(r'^zhongguo/admin/', include(admin.site.urls)),  # NOQA
     url(r'^zhongguo/registration_page/$', ParticipantCreateView.as_view(), name='registration-page'),
     url(r'^zhongguo/', include('cms.urls')),
 )
