@@ -32,12 +32,12 @@
                     <img src="{% static "img/logo.png" %}" alt="opusplace">
                 </a>
                 <div class="header-wrapper">
-                    <ul class="nav-list">
-                        {% show_menu 0 100 100 100 %}
-                        <li class="child {% block nav_registration_page %}sibling{% endblock nav_registration_page %}">
-                            <a href="{% url "registration-page" %}">{% trans "Registration page" %}</a>
-                        </li>
-                    </ul>
+{#                    <ul class="nav-list">#}
+{#                        {% show_menu 0 100 100 100 %}#}
+{#                        <li class="child {% block nav_registration_page %}sibling{% endblock nav_registration_page %}">#}
+{#                            <a href="{% url "registration-page" %}">{% trans "Registration page" %}</a>#}
+{#                        </li>#}
+{#                    </ul>#}
                     <div class="lang-box">
                         <ul class="lang-list">
                             {% for language in languages %}

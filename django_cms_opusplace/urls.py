@@ -23,7 +23,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^$', RedirectView.as_view(url='/zhongguo/')),
     url(r'^zhongguo/admin/', include(admin.site.urls)),  # NOQA
-    url(r'^zhongguo/registration_page/$', ParticipantCreateView.as_view(), name='registration-page'),
+    url(r'^zhongguo/$', ParticipantCreateView.as_view(), name='registration-page'),
     url(r'^zhongguo/', include('cms.urls')),
 )
 

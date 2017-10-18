@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cms_tags %}
 
-{% block nav_registration_page %}selected{% endblock nav_registration_page %}
+{#{% block nav_registration_page %}selected{% endblock nav_registration_page %}#}
 
 {% block set_lang_current_page %}
 {% url "registration-page" %}
 {% endblock set_lang_current_page %}
 
 {% block content %}
-  <form class="registration-form" action="" method="post">
+  <a href="#registration-form">{% trans "Registration" %}</a>
+  {% static_placeholder 'registration_img' %}
+  {% static_placeholder 'registration_content' %}
+  <form id="registration-form" class="registration-form" action="{% url "registration-page" %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="{% trans "Save" %}" />
-</form>
+    <input type="submit" value="{% trans "Send" %}" />
+  </form>
+
+  <script>
+    $(document).ready(function() {
+      {% if form.errors %}
+        window.location.hash = '#registration-form';
+      {% endif %}
+    })
+  </script>
 {% endblock content %}

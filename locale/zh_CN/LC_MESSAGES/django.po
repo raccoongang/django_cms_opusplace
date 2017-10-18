@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-17 09:44+0000\n"
+"POT-Creation-Date: 2017-10-18 14:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,13 +26,13 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: django_cms_opusplace/templates/base.html:38
-msgid "Registration page"
+#: django_cms_opusplace/templates/registration/form.html:12
+msgid "Registration"
 msgstr "注册"
 
-#: django_cms_opusplace/templates/registration/form.html:14
-msgid "Save"
-msgstr ""
+#: django_cms_opusplace/templates/registration/form.html:18
+msgid "Send"
+msgstr "发送"
 
 #: registration/models.py:11
 msgid "March"
@@ -87,6 +87,7 @@ msgid ""
 "Opusplace team</p>"
 msgstr ""
 "谢谢您的关注！<br />\n"
-"我们将在十二月初向您提供更多关于“Problem solving - to awaken interest” 课程开始的详情。\n"
+"我们将在十二月初向您提供更多关于“Problem solving - to awaken interest” 课程开"
+"始的详情。\n"
 "<p>祝安，<br />\n"
 "Opusplace 团队</p>"
