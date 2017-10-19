@@ -1,6 +1,7 @@
 {% load cms_tags menu_tags sekizai_tags %}
 {% load i18n %}
 {% load static %}
+{% get_current_language as LANGUAGE_CODE %}
 <!doctype html>
 <html>
     <head>
@@ -10,14 +11,16 @@
         {% render_block "css" %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body class="lang-{{ LANGUAGE_CODE }}">
         {% if messages %}
         <div class="message-holder">
-            <div class="messages">
-                <span class="close">close</span>
-                {% for message in messages %}
-                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</p>
-                {% endfor %}
+            <div class="popup-holder">
+                <div class="messages">
+                    <span class="close">close</span>
+                    {% for message in messages %}
+                    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% endif %}

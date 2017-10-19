@@ -9,14 +9,21 @@
 {% endblock set_lang_current_page %}
 
 {% block content %}
-  <a href="#registration-form">{% trans "Registration" %}</a>
+  <a href="#registration-form"  class="register-button">{% trans "Registration" %}</a>
   {% static_placeholder 'registration_img' %}
-  {% static_placeholder 'registration_content' %}
-  <form id="registration-form" class="registration-form" action="{% url "registration-page" %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{% trans "Send" %}" />
-  </form>
+  <div class="reg-wrapper" id="registration-form">
+    <div class="left-side">
+      {% static_placeholder 'registration_content' %}
+    </div>
+    <div class="right-side">
+      <form  class="registration-form" action="{% url "registration-page" %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans "Send" %}" />
+      </form>
+    </div>
+  </div>
+  
 
   <script>
     $(document).ready(function() {
