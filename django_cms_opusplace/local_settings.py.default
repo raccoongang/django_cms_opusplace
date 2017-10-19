@@ -1,3 +1,5 @@
+STATIC_URL = '/zhongguo/static/'
+MEDIA_URL = '/zhongguo/media/'
 
 DATABASES = {
     'default': {
