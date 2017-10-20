@@ -237,6 +237,9 @@ a:hover {
     justify-content: space-between;
     font-size: 16px;
 }
+.reg-wrapper input {
+    font-style: normal;
+}
 .left-side,
 .right-side {
     flex: 1 1 560px;
