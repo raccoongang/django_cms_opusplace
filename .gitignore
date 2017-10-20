@@ -55,6 +55,7 @@ coverage.xml
 local_settings.py
 *.db
 media/
+static/
 
 # Flask stuff:
 instance/
