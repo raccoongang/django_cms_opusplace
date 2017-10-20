@@ -237,7 +237,7 @@ a:hover {
     justify-content: space-between;
     font-size: 16px;
 }
-.reg-wrapper input {
+body .content-wrapper .reg-wrapper input {
     font-style: normal;
 }
 .left-side,
