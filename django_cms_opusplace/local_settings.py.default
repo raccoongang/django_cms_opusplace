@@ -1,3 +1,7 @@
+STATIC_URL = '/zhongguo/static/'
+MEDIA_URL = '/zhongguo/media/'
+
+LANGUAGE_COOKIE_NAME = 'zhongguo_language'
 
 DATABASES = {
     'default': {
